@@ -53,3 +53,8 @@ fun RepositoryHandler.whirvexNexusRelease():
     artifact.url = WHIRVEX_NEXUS_URI.resolve("repository/maven-releases")
     artifact.credentials { it.useWhirvexNexusCredentials() }
 }
+
+fun RepositoryHandler.whirvexNexus() {
+    whirvexNexusSnapshot()
+    whirvexNexusRelease()
+}
