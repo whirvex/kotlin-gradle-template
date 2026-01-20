@@ -57,7 +57,6 @@ internal data class NexusConfig(
     val credentials: NexusCredentials,
 )
 
-// TODO: docs
 private val JsonElement.asNexusConfig: NexusConfig
     get() = asJsonObject.let {
         val credentials = it["credentials"]
