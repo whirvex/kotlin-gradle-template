@@ -1,12 +1,9 @@
-import io.whirvex.gradle.isSnapshot
-import io.whirvex.gradle.whirvexNexusRelease
-import io.whirvex.gradle.whirvexNexusSnapshot
-
 plugins {
     kotlin("jvm") version "2.3.0"
     id("org.jetbrains.dokka") version "2.1.0"
     `java-library`
     `maven-publish`
+    id("whirvex-nexus")
 }
 
 group = "io.whirvex"
@@ -37,20 +34,4 @@ dokka {
 
 tasks.test {
     useJUnitPlatform()
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("mavenJava") {
-            from(components["java"])
-        }
-    }
-
-    repositories {
-        if (version.isSnapshot) {
-            whirvexNexusSnapshot()
-        } else {
-            whirvexNexusRelease()
-        }
-    }
 }

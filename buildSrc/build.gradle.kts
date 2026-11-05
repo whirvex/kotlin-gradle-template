@@ -1,5 +1,9 @@
 plugins {
-    kotlin("jvm") version "2.3.0"
+    `kotlin-dsl`
+}
+
+kotlin {
+    explicitApi()
 }
 
 repositories {
@@ -8,6 +12,14 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.gradle.kotlin.kotlin-dsl:org.gradle.kotlin.kotlin-dsl.gradle.plugin:4.4.0")
     implementation("com.google.code.gson:gson:2.13.2")
+}
+
+gradlePlugin {
+    plugins {
+        create("whirvex-nexus") {
+            id = "whirvex-nexus"
+            implementationClass = "io.whirvex.gradle.WhirvexNexusPlugin"
+        }
+    }
 }
