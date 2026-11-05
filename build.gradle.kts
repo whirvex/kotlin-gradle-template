@@ -38,10 +38,6 @@ subprojects {
         explicitApi()
     }
 
-    repositories {
-        mavenCentral()
-    }
-
     dependencies {
         testImplementation(kotlin("test"))
 
