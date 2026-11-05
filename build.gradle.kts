@@ -12,6 +12,16 @@ allprojects {
     }
 }
 
+/*
+ * Subproject versions must be set in the root project. The "publish"
+ * task does not see the version set by a subproject's respective build
+ * file for some reason.
+ */
+
+// project(":foo") {
+//     version = "0.0.1-SNAPSHOT"
+// }
+
 subprojects {
     plugins.apply("kotlin")
 
