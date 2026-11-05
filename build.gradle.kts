@@ -14,7 +14,6 @@ allprojects {
 
 subprojects {
     plugins.apply("kotlin")
-    plugins.apply("org.jetbrains.dokka")
 
     if (!project.isExemptFromWhirvexNexus) {
         plugins.apply("java-library")
@@ -37,13 +36,6 @@ subprojects {
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
 
         testImplementation(kotlin("test"))
-    }
-
-    dokka {
-        moduleName.set(TODO())
-        dokkaSourceSets.main {
-            includes.from("src/Module.md")
-        }
     }
 
     tasks.test {
