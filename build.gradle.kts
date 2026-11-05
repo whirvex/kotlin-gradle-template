@@ -22,6 +22,21 @@ allprojects {
 //     version = "0.0.1-SNAPSHOT"
 // }
 
+/*
+ * Add this code to a project's build.gradle.kts to use Dokka.
+ */
+
+// // foo/build.gradle.kts
+//
+// plugins.apply("org.jetbrains.dokka")
+//
+// dokka {
+//     moduleName.set("Foo")
+//     dokkaSourceSets.main {
+//         includes.from("src/Module.md")
+//     }
+// }
+
 subprojects {
     plugins.apply("kotlin")
 
