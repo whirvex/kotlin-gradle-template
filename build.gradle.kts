@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.3.0"
+    kotlin("jvm") version "2.4.21"
     id("org.jetbrains.dokka") version "2.1.0"
     `java-library`
     `maven-publish`
@@ -12,7 +12,6 @@ version = "0.0.1-SNAPSHOT"
 kotlin {
     jvmToolchain(jdkVersion = 21)
     explicitApi()
-    compilerOptions.freeCompilerArgs.add("-Xcontext-parameters")
 }
 
 repositories {
